@@ -1,2 +1,2 @@
 # colour_memory
-Just a game made for exercise
+Just an exercise basic game
