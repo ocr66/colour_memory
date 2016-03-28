@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Colour Memory</string>
+    <string name="highscores">Highscores</string>
+    <string name="currHigh">Current Highscore: </string>
+    <string name="done">Done</string>
+    <string name="new_highscore">New Highscore!</string>
+    <string name="input_name">Put your name: </string>
+    <string name="name">Your Name</string>
+</resources>
