@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
-        final Cursor fila = bd.rawQuery("select * from highscores where score > ? and name == ?", new String[]{score + "", name});
+        final Cursor fila = bd.rawQuery("select * from highscores where score >= ? and name == ?", new String[]{score + "", name});
         if (fila != null && fila.getCount() > 0) {
             fila.moveToFirst();
             /*ContentValues registro = new ContentValues();
@@ -202,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
             registro.put("score", score);
             bd.insert("highscores", null, registro);
         }
+        fila.close();
         bd.close();
     }
 
@@ -210,10 +211,11 @@ public class MainActivity extends AppCompatActivity {
                 null, 1);
         SQLiteDatabase bd = admin.getReadableDatabase();
 
-        final Cursor fila = bd.rawQuery("select * from highscores WHERE score > ", new String[]{score});
+        final Cursor fila = bd.rawQuery("select * from highscores WHERE score >= ", new String[]{score});
         if (fila != null && fila.getCount() > 0) {
             fila.moveToFirst();
         }
+        fila.close();
         bd.close();
     }
 
